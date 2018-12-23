@@ -26,7 +26,7 @@ public class PictureController {
 	@RequestMapping("/pic/upload")
 	@ResponseBody
 	public String pictureUpload(MultipartFile uploadFile) {
-		Map result=pictureService.uploadPicture(uploadFile);
+		Map<?, ?> result=pictureService.uploadPicture(uploadFile);
 		return JsonUtils.objectToJson(result);
 	}
 }

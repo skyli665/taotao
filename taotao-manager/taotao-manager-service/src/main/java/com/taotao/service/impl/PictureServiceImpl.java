@@ -1,10 +1,7 @@
 package com.taotao.service.impl;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Map;
-import java.util.UUID;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -30,8 +27,8 @@ public class PictureServiceImpl implements PictureService{
 	@Value("${IMAGE_BASE_URL}")
 	private String IMAGE_BASE_URL;
 	@Override
-	public Map uploadPicture(MultipartFile uploadFile) {
-		Map resultMap=new HashMap<>();
+	public Map<Object, Object> uploadPicture(MultipartFile uploadFile) {
+		Map<Object, Object> resultMap=new HashMap<>();
 		//生成新文件名
 		//取扩展名
 		String oldName=uploadFile.getOriginalFilename();
@@ -42,10 +39,9 @@ public class PictureServiceImpl implements PictureService{
 		//图片上传
 		SFTPUtil sftp = new SFTPUtil(FTP_USERNAME, FTP_PASSWD, FTP_ADDRESS, FTP_PORT);  
         sftp.login();  
-        File file = new File("D:\\aaa.jpg");
         try {
         	String imagePath=new DateTime().toString("/yyyy/MM/dd");
-	        InputStream is = new FileInputStream(file);  
+	        InputStream is = uploadFile.getInputStream(); 
 	        sftp.upload(FTP_BASE_PATH,imagePath,newName , is);
 	        resultMap.put("error", 0);
 	        resultMap.put("url",IMAGE_BASE_URL+imagePath+"/"+newName);
