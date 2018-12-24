@@ -7,7 +7,6 @@ import org.junit.Test;
 import com.taotao.common.util.SFTPUtil;
 
 public class FTPTest {
-	@Test
 	public void testFtpClient() throws Exception {
 		SFTPUtil sftp = new SFTPUtil("root", "14171B", "192.168.0.53", 22);  
         sftp.login();  
