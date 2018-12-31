@@ -14,7 +14,7 @@
 	
 	<bean id="jedisClient" class="com.taotao.rest.dao.impl.JedisClientSingle"/>
 	
-	<bean id="redisClusterClient" class="redis.clients.jedis.JedisCluster">
+	<!-- <bean id="redisClusterClient" class="redis.clients.jedis.JedisCluster">
 		<constructor-arg name="nodes">
 			<set>
 				<bean class="redis.clients.jedis.HostAndPort">
@@ -44,5 +44,5 @@
 			</set>
 		</constructor-arg>
 	</bean>
-	<bean id="jedisClientCluster" class="com.taotao.rest.dao.impl.jedisClientCluster"/>
+	<bean id="jedisClient" class="com.taotao.rest.dao.impl.JedisClientCluster"/> -->
 </beans>

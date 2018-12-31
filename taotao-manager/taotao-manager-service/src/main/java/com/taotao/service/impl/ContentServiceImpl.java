@@ -33,6 +33,7 @@ public class ContentServiceImpl implements ContentService {
 		content.setUpdated(new Date());
 		contentMapper.insert(content);
 		try {
+			System.out.println("==========>");
 			HttpClientUtil.doGet(REST_BASE_URL + REST_CONTENT_SYNC_URL + content.getCategoryId());
 		} catch (Exception e) {
 			e.printStackTrace();

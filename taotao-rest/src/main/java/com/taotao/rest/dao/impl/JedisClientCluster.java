@@ -6,7 +6,7 @@ import com.taotao.rest.dao.JedisClient;
 
 import redis.clients.jedis.JedisCluster;
 
-public class jedisClientCluster implements JedisClient {
+public class JedisClientCluster implements JedisClient {
 	@Autowired
 	private JedisCluster jedisCluster;
 	
