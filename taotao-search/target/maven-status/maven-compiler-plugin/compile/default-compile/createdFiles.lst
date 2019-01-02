@@ -1,0 +1,5 @@
+com\taotao\search\controller\ItemController.class
+com\taotao\search\pojo\Item.class
+com\taotao\search\mapper\ItemMapper.class
+com\taotao\search\service\impl\ItemServiceImpl.class
+com\taotao\search\service\ItemService.class
