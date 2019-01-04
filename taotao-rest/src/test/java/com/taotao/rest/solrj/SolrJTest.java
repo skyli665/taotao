@@ -8,10 +8,10 @@ import org.junit.Test;
 
 
 public class SolrJTest {
-    
+    @Test
     public void addDocument() throws Exception {
         // 创建连接
-        SolrServer solrServer = new HttpSolrServer("http://172.18.245.137:8080/solr");
+        SolrServer solrServer = new HttpSolrServer("http://192.168.0.53:8080/solr");
         // 创建文档对象
         SolrInputDocument document = new SolrInputDocument();
         document.addField("id", "test001");
@@ -22,9 +22,9 @@ public class SolrJTest {
         // 提交
         solrServer.commit();
     }
-    
+    @Test
     public void deleteDocument() throws Exception {
-        SolrServer solrServer=new HttpSolrServer("http://172.18.245.137:8080/solr");
+        SolrServer solrServer=new HttpSolrServer("http://192.168.0.53:8080/solr");
         //solrServer.deleteById("test001");
         solrServer.deleteByQuery("*:*");
         solrServer.commit();
