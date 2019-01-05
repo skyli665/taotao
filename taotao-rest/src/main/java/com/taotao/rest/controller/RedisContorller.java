@@ -17,7 +17,6 @@ public class RedisContorller {
 	@RequestMapping("content/{contentCid}")
 	@ResponseBody
 	public TaotaoResult contentCacheSync(@PathVariable Long contentCid) {
-		System.out.println("========>");
 		return redisService.syncContent(contentCid);
 	}
 }

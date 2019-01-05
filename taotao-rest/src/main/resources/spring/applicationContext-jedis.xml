@@ -8,7 +8,7 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
 	<bean id="redisClient" class="redis.clients.jedis.JedisPool">
-		<constructor-arg name="host" value="192.168.0.53" />
+		<constructor-arg name="host" value="192.168.0.53" /> 
 		<constructor-arg name="port" value="6379" />
 	</bean>
 	
