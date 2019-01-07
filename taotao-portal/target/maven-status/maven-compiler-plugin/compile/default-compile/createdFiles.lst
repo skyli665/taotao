@@ -10,6 +10,7 @@ com\taotao\portal\pojo\SearchResult.class
 com\taotao\portal\interceptor\LoginInterceptor.class
 com\taotao\portal\controller\ItemController.class
 com\taotao\portal\pojo\CartItem.class
+com\taotao\portal\controller\OrderController.class
 com\taotao\portal\service\ItemService.class
 com\taotao\portal\service\CartService.class
 com\taotao\portal\service\UserService.class
