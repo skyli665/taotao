@@ -25,8 +25,7 @@ public class OrderServiceImpl implements OrderService {
         String json=HttpClientUtil.doPostJson(ORDER_BASE_URL+ORDER_CREATE_URL, JsonUtils.objectToJson(order));
         TaotaoResult taotaoResult=TaotaoResult.format(json);
         if(taotaoResult.getStatus()==200) {
-            Long orderId=(Long)taotaoResult.getData();
-            return orderId.toString();
+            return taotaoResult.getData().toString();
         }
         return null;
     }

@@ -37,10 +37,16 @@ public class OrderController {
     
     @RequestMapping("/create")
     public String orderCreate(Order order,Model model) {
+        try {
        String orderId= orderService.createOrder(order);
        model.addAttribute("orderId", orderId);
        model.addAttribute("payment", order.getPayment());
        model.addAttribute("date", new DateTime().plusDays(3).toString("yyyy-MM-dd"));
        return "success";
+        }catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("message", "创建订单出错");
+            return "error/excrption";
+        }
     }
 }
