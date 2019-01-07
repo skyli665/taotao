@@ -46,7 +46,7 @@ public class OrderController {
         }catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("message", "创建订单出错");
-            return "error/excrption";
+            return "error/exception";
         }
     }
 }
