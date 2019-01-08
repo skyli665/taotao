@@ -2,7 +2,7 @@ package com.taotao.order.dao.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.taotao.rest.dao.JedisClient;
+import com.taotao.order.dao.JedisClient;
 
 import redis.clients.jedis.JedisCluster;
 
